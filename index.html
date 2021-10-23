@@ -55,6 +55,7 @@
           src="images/twitter.svg" 
           alt="ícone Twitter">
           </a>
+       </li>
         <li class="linkedin">
             <a href="https://www.linkedin.com/in/ana-beatriz-orlando-dal-bello-36a821125/"
             target="_blank">
@@ -78,15 +79,12 @@
      function change_social_media_links(){
       for (let li of social_links.children){
        const social = li.getAttribute('class')
-        li.children[0].href = `htts://${social}.com/${links_social_media[social]}`
+        li.children[0].href = `https://${social}.com/${links_social_media[social]}`
        alert(li.children[0].href)
       }
      }
+     
      change_social_media_links()
-
-
-
     </script>
-
   </body>
 </html>
