@@ -25,15 +25,15 @@
           <img src="images/eu.jpg" alt="Foto da Ana"/>
       </div>
 
-      <h1>Ana Bello</h1>
+      <h1 id="user_name">Ana Bello</h1>
       <a href="https://github.com/Anadalbello" target="_blank">
         <img src="images/github.svg" alt="ícone GitHub"/>Anadalbello
       </a>
 
       <p>Engenheira Eletricista iniciando no mundo da programação</p>
 
-      <ul>
-        <li>
+      <ul id="social_links">
+        <li class="facebook">
           <a href="https://www.facebook.com/anabeatriz.orlandodalbello" 
           target="_blank">
           <img 
@@ -41,21 +41,21 @@
           alt="ícone Facebook">
           </a>
         </li>
-        <li>
+        <li class="instagram">
           <a href="https://www.instagram.com/anabeatriz.odb" target="_blank">
           <img 
           src="images/instagram.svg" 
           alt="ícone Instagram">
           </a>
         </li>
-        <li>
+        <li class="twitter">
           <a href="https://twitter.com/beatriz_dal"
           target="_blank">
           <img 
           src="images/twitter.svg" 
           alt="ícone Twitter">
           </a>
-        <li>
+        <li class="linkedin">
             <a href="https://www.linkedin.com/in/ana-beatriz-orlando-dal-bello-36a821125/"
             target="_blank">
             <img 
@@ -65,5 +65,28 @@
         </li>
       </ul>
     </main>
+
+    <script>
+      const links_social_media = {
+       github:"Anadalbello",
+       instagram:"anabeatriz.odb",
+       twitter:"beatriz_dal",
+       facebook:"anabeatriz.orlandodalbello",
+       linkedin:"ana-beatriz-orlando-dal-bello-36a821125"
+     }
+
+     function change_social_media_links(){
+      for (let li of social_links.children){
+       const social = li.getAttribute('class')
+        li.children[0].href = `htts://${social}.com/${links_social_media[social]}`
+       alert(li.children[0].href)
+      }
+     }
+     change_social_media_links()
+
+
+
+    </script>
+
   </body>
 </html>
