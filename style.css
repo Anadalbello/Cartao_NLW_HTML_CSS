@@ -4,8 +4,7 @@
 html,
 body {
   --black: hsl(240, 6%, 13%);
-  --grey: hsl(240, 9%, 89%);
-
+  --gray: hsl(240, 9%, 89%);
   height: 100%;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -13,77 +12,154 @@ body {
 
 body {
   display: grid;
-  place-items: center;
+  place-items: start center;
 }
 
 main {
-  background: url(images/background.svg);
-  width: 375px;
-  height: 812px;
+  background: url(images/background.svg) no-repeat center/cover;
+  width: 100vw;
+  min-height: 812px;
+  height: 100vh;
 }
 
 .container {
   max-width: 250px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   text-align: center;
-
-  color: var(--grey);
+  color: var(--gray);
 }
-
 .avatar {
   width: 10rem;
   margin: 11.5rem auto 0;
-
   position: relative;
 }
-
 .avatar span {
   position: absolute;
   top: -15px;
   z-index: 1;
 }
-
 .avatar > img {
   width: 10rem;
   height: 11.5rem;
   object-fit: cover;
-
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 }
-
 h1 {
   font-size: 1.5rem;
-
   margin-top: 1.5rem;
+  color: var(--grey);
 }
 
 a {
-  color: var(--grey);
+  color: var(--gray);
   text-decoration: none;
-  margin-top: 0.25rem;
-
   display: flex;
-  gap: 0.75;
-
+  gap: 0.75rem;
   justify-content: center;
   align-items: center;
+  margin-top: 0.25rem;
 }
-
+a:hover {
+  color: darkmagenta;
+}
 p {
   margin-top: 2rem;
+  color: var(--grey);
   font-family: 'Caveat', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
 ul {
   margin-top: 4rem;
-
   list-style: none;
   padding: 0;
-
   display: flex;
   gap: 0.5rem;
-
   justify-content: center;
+  cursor: pointer;
+}
+.facebook:hover {
+  box-shadow: inset 0px 0px 26px 2px rgba(53, 54, 82, 0.45);
+  -webkit-box-shadow: inset 0px 0px 26px 2px rgba(53, 54, 82, 0.45);
+  -moz-box-shadow: inset 0px 0px 26px 2px rgba(53, 54, 82, 0.45);
+}
+.twitter:hover {
+  box-shadow: inset 0px 0px 26px 2px rgba(53, 54, 82, 0.45);
+  -webkit-box-shadow: inset 0px 0px 26px 2px rgba(53, 54, 82, 0.45);
+  -moz-box-shadow: inset 0px 0px 26px 2px rgba(53, 54, 82, 0.45);
+}
+.instagram:hover {
+  box-shadow: inset 0px 0px 26px 2px rgba(53, 54, 82, 0.45);
+  -webkit-box-shadow: inset 0px 0px 26px 2px rgba(53, 54, 82, 0.45);
+  -moz-box-shadow: inset 0px 0px 26px 2px rgba(53, 54, 82, 0.45);
+}
+.linkedin:hover {
+  box-shadow: inset 0px 0px 26px 2px rgba(53, 54, 82, 0.45);
+  -webkit-box-shadow: inset 0px 0px 26px 2px rgba(53, 54, 82, 0.45);
+  -moz-box-shadow: inset 0px 0px 26px 2px rgba(53, 54, 82, 0.45);
+}
+/* Regras de estilo que serão lidas apenas quando a tela tiver no mínimo 720px */
+
+@media (min-width: 720px) {
+  /* Adidionando cor ao body */
+  body {
+    background: linear-gradient(
+      to bottom,
+      #0f037a,
+      #2623cb,
+      #5142d9,
+      #5435e0,
+      #6625df,
+      #7128d0,
+      #782ac1,
+      #8d2cb3,
+      #852f8d,
+      #6d2967,
+      #331b1d,
+      #000000
+    );
+  }
+  /* O main da versão desktop tem tamanho fixo e menor do que o da versão mobile. Foram redefinidos o min-height, o height, a width e adicionada uma margem no topo para encaixar a alça. Ainda para encaixar a alça, o main recebe position: relative. Sombra adicionada para destacar o crachá. */
+  main {
+    min-height: 540px;
+    height: 540px;
+    width: 358px;
+    margin-top: 60px;
+    position: relative;
+    -webkit-box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.35);
+    box-shadow: 3px 3px 10px 5px rgba(0, 0, 0, 0.35);
+  }
+
+  /* Uma forma de adicionar a alça na imagem é utilizando ::before e ::after. Selecionando o elemento que corresponde ao crachá (content), usamos a seleção content::before e content::after para adicionar conteúdo à página antes e depois do content sem alterar o html. */
+  /* Antes do elemento (crachá), foi adicionada a abertura preta onde se fixaria a alça do crachá. */
+  .container::before {
+    container: '';
+    background: black;
+    width: 80px;
+    height: 8px;
+    position: absolute;
+    margin-left: -38px;
+    top: 30px;
+  }
+
+  /* Após o elemento, temos outro conteúdo vazio para a alça colorida. */
+  .container::after {
+    content: '';
+    background: linear-gradient(hsl(313, 76%, 49%), hsl(249, 60%, 53%));
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    width: 64px;
+    height: 92px;
+    position: absolute;
+    top: -60px;
+    margin-left: -31px;
+  }
+
+  /* Arrumando a posição da foto pessoal e espaçamentos para as informações do crachá caberem no novo formato */
+  .avatar {
+    margin: 4.5rem auto 0;
+  }
+  ul {
+    margin-top: 2rem;
+  }
 }
