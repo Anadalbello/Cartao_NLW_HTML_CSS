@@ -44,6 +44,7 @@ main {
   object-fit: cover;
   clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
 }
+
 h1 {
   font-size: 1.5rem;
   margin-top: 1.5rem;
@@ -161,5 +162,17 @@ ul {
   }
   ul {
     margin-top: 2rem;
+  }
+}
+.rotate {
+  animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
