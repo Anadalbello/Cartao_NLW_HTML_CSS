@@ -22,15 +22,15 @@
           <span>
             <img src="images/build.svg" alt="Selo rocketseat"/>
           </span>
-          <img src="images/eu.jpg" alt="Foto da Ana"/>
+          <img src="images/eu.jpg" alt="Foto da Ana" id="user_image"/>
       </div>
 
       <h1 id="user_name">Ana Bello</h1>
-      <a href="https://github.com/Anadalbello" target="_blank">
-        <img src="images/github.svg" alt="ícone GitHub"/>Anadalbello
+      <a id="user_link" href="https://github.com/Anadalbello" target="_blank">
+        <img src="images/github.svg" alt="ícone GitHub"/> <span id="user_login">Anadalbello</span> 
       </a>
 
-      <p>Engenheira Eletricista iniciando no mundo da programação</p>
+      <p id="user_bio">Engenheira Eletricista iniciando no mundo da programação</p>
 
       <ul id="social_links">
         <li class="facebook">
@@ -67,24 +67,6 @@
       </ul>
     </main>
 
-    <script>
-      const links_social_media = {
-       github:"Anadalbello",
-       instagram:"anabeatriz.odb",
-       twitter:"beatriz_dal",
-       facebook:"anabeatriz.orlandodalbello",
-       linkedin:"in/ana-beatriz-orlando-dal-bello-36a821125"
-     }
-
-     function change_social_media_links(){
-      for (let li of social_links.children){
-       const social = li.getAttribute('class')
-        li.children[0].href = `https://${social}.com/${links_social_media[social]}`
-       alert(li.children[0].href)
-      }
-     }
-
-     change_social_media_links()
-    </script>
+    <script src="main.js"></script>
   </body>
 </html>
